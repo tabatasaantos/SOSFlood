@@ -25,12 +25,12 @@ class LoginSOSPage extends StatelessWidget {
               const Icon(
                 Icons.sos_outlined,
                 size: 100,
-                color: Color.fromARGB(255, 123, 41, 36),
+                color: Color.fromARGB(255, 137, 41, 34),
               ),
               const Text(
                 'Enchentes',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 123, 41, 36),
+                  color: Color.fromARGB(255, 137, 41, 34),
                   fontSize: 27,
                   fontWeight: FontWeight.bold,
                 ),
