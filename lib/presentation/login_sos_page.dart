@@ -91,24 +91,24 @@ class LoginSOSPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   TileSOSWidget(imagePath: 'lib/images/google.png'),
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Not a member?',
+                    'Não tem cadastro?',
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(width: 4),
                   const Text(
-                    'Register now',
+                    'Cadastre agora',
                     style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.bold,
