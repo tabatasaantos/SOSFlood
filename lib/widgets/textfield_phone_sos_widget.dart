@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TextFieldSOSWidget extends StatelessWidget {
+class TextFieldPhoneSOSWidget extends StatelessWidget {
   final dynamic controller;
   final String hintText;
   final bool obscureText;
 
-  const TextFieldSOSWidget({
+  const TextFieldPhoneSOSWidget({
     super.key,
     required this.controller,
     required this.hintText,
@@ -16,9 +16,18 @@ class TextFieldSOSWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         obscureText: obscureText,
+        validator: (value) {
+          if(value.toString().isEmpty){
+            return 'Informe um telefone com DDD para continuar';
+          }
+          else if(value.toString().length < 11){
+            return 'Esse número não é válido';
+          }
+          return null;
+        },
         decoration: InputDecoration(
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
