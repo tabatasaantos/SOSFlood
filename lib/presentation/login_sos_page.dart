@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:sos_flood/presentation/register_sos_page.dart';
 
 import '../widgets/button_sos_widget.dart';
-import '../widgets/textfield_sos_widget.dart';
+import '../widgets/textfield_password_sos_widget.dart';
+import '../widgets/textfield_phone_sos_widget.dart';
 import '../widgets/tile_sos_widget.dart';
 
 class LoginSOSPage extends StatelessWidget {
   LoginSOSPage({super.key});
 
-  final usernameController = TextEditingController();
+  final phoneController = TextEditingController();
   final passwordController = TextEditingController();
 
   void signUserIn() {}
@@ -36,13 +38,13 @@ class LoginSOSPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 50),
-              TextFieldSOSWidget(
-                controller: usernameController,
+              TextFieldPhoneSOSWidget(
+                controller: phoneController,
                 hintText: 'Telefone',
                 obscureText: false,
               ),
               const SizedBox(height: 10),
-              TextFieldSOSWidget(
+              TextFieldPasswordSOSWidget(
                 controller: passwordController,
                 hintText: 'Senha',
                 obscureText: true,
@@ -62,6 +64,7 @@ class LoginSOSPage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               ButtonSOSWidget(
+                text: 'Entrar',
                 onTap: signUserIn,
               ),
               const SizedBox(height: 50),
@@ -107,11 +110,14 @@ class LoginSOSPage extends StatelessWidget {
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(width: 4),
-                  const Text(
-                    'Cadastre agora',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                  TextButton(
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const RegisterSOSPage())),
+                    child: const Text(
+                      'Cadastre agora',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
