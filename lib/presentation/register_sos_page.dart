@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sos_flood/presentation/form_sos_page.dart';
 
 import '../widgets/button_sos_widget.dart';
 import '../widgets/textfield_password_sos_widget.dart';
@@ -57,12 +58,14 @@ class _RegisterSOSPageState extends State<RegisterSOSPage> {
                 hintText: 'Senha',
                 obscureText: true,
               ),
-              const SizedBox(height: 10),
+           
               
-              const SizedBox(height: 230),
+              const SizedBox(height: 240),
               ButtonSOSWidget(
                 text: 'Cadastrar',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const FormSOSPage()));
+                },
               ),
             ],
           ),
