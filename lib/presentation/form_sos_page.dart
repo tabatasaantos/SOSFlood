@@ -51,15 +51,23 @@ class _FormSOSPageState extends State<FormSOSPage> {
                 hintText: 'Bairro',
                 obscureText: false,
               ),
-               const SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFieldPhoneSOSWidget(
                 controller: complementController,
                 hintText: 'Complemento',
                 obscureText: false,
               ),
-            
-              
-              const SizedBox(height: 240),
+              const SizedBox(height: 50),
+              const Icon(
+                Icons.location_on,
+                size: 100,
+                color: Color.fromARGB(255, 137, 41, 34),
+              ),
+              Text(
+                'Compartilhar localização',
+                style: TextStyle(color: Colors.grey[700]),
+              ),
+              const SizedBox(height: 110),
               ButtonSOSWidget(
                 text: 'Pedir ajuda',
                 onTap: () {},
