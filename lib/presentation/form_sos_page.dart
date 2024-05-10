@@ -30,7 +30,6 @@ class _FormSOSPageState extends State<FormSOSPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
               const Text(
                 'Pedir ajuda',
                 style: TextStyle(
@@ -58,16 +57,23 @@ class _FormSOSPageState extends State<FormSOSPage> {
                 obscureText: false,
               ),
               const SizedBox(height: 50),
-              const Icon(
-                Icons.location_on,
-                size: 100,
-                color: Color.fromARGB(255, 137, 41, 34),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Text(
+                  'Ou compartilhe sua localização',
+                  style: TextStyle(color: Colors.grey[700]),
+                ),
               ),
-              Text(
-                'Compartilhar localização',
-                style: TextStyle(color: Colors.grey[700]),
+              const SizedBox(height: 20),
+              InkWell(
+                onTap: () {},
+                child: const Icon(
+                  Icons.location_on,
+                  size: 100,
+                  color: Color.fromARGB(255, 137, 41, 34),
+                ),
               ),
-              const SizedBox(height: 110),
+              const SizedBox(height: 100),
               ButtonSOSWidget(
                 text: 'Pedir ajuda',
                 onTap: () {},
