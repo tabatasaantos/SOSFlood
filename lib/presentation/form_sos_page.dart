@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/button_sos_widget.dart';
-import '../widgets/textfield_password_sos_widget.dart';
 import '../widgets/textfield_phone_sos_widget.dart';
 
 class FormSOSPage extends StatefulWidget {
