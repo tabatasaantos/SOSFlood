@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sos_flood/presentation/location_sos_page.dart';
 
 import '../widgets/button_sos_widget.dart';
 import '../widgets/textfield_phone_sos_widget.dart';
@@ -65,7 +66,9 @@ class _FormSOSPageState extends State<FormSOSPage> {
               ),
               const SizedBox(height: 20),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const LocationSOSPage()));
+                },
                 child: const Icon(
                   Icons.location_on,
                   size: 100,
