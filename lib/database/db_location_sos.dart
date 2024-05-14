@@ -14,5 +14,12 @@ static setupDemoData() async {
     FirebaseFirestore firestore = DB.get();
     final geo = Geoflutterfire();
 
-    
-}}
+    List<GeoFirePoint> locations = [
+      geo.point(latitude: -23.5560767, longitude: -46.6608517),
+      geo.point(latitude: -23.5585417, longitude: -46.6631051),
+      geo.point(latitude: -23.5548119, longitude: -46.6571616),
+      geo.point(latitude: -23.5584417, longitude: -46.6632462),
+      geo.point(latitude: -23.5764314, longitude: -46.6892785),
+    ];
+}
+}
