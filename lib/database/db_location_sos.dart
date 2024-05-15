@@ -11,7 +11,7 @@ class DB {
   }
 
 static setupDemoData() async {
-    FirebaseFirestore firestore = DB.get();
+    //FirebaseFirestore firestore = DB.get();
     final geo = Geoflutterfire();
 
     List<GeoFirePoint> locations = [
