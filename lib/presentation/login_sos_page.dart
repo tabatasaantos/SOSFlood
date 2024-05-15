@@ -95,9 +95,9 @@ class LoginSOSPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   TileSOSWidget(imagePath: 'lib/images/google.png'),
                 ],
               ),
