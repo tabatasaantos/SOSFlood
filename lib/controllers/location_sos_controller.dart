@@ -55,10 +55,10 @@ class LocationSOSController extends GetxController {
 
     stream.listen((List<DocumentSnapshot> locations) {
       markers.clear();
-      locations.forEach((location) {
+      for (var location in locations) {
         addMarker(location);
         update();
-      });
+      }
       Get.back();
     });
   }
@@ -76,7 +76,9 @@ class LocationSOSController extends GetxController {
     FirebaseFirestore db = DB.get();
     final locations = await db.collection('locations').get();
 
-    locations.docs.forEach((location) => addMarker(location));
+    for (var location in locations.docs) {
+      addMarker(location);
+    }
   }
 
   addMarker(location) async {
