@@ -60,7 +60,7 @@ class _FormSOSPageState extends State<FormSOSPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Text(
-                  'Ou compartilhe sua localização',
+                  'Ou compartilhe a sua localização',
                   style: TextStyle(color: Colors.grey[700]),
                 ),
               ),
