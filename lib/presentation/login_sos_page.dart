@@ -40,7 +40,7 @@ class LoginSOSPage extends StatelessWidget {
               const SizedBox(height: 50),
               TextFieldPhoneSOSWidget(
                 controller: phoneController,
-                hintText: 'Telefone',
+                hintText: 'CPF',
                 obscureText: false,
               ),
               const SizedBox(height: 10),
@@ -97,7 +97,7 @@ class LoginSOSPage extends StatelessWidget {
               const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
+                children: [
                   TileSOSWidget(imagePath: 'lib/images/google.png'),
                 ],
               ),
@@ -111,7 +111,10 @@ class LoginSOSPage extends StatelessWidget {
                   ),
                   const SizedBox(width: 4),
                   TextButton(
-                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const RegisterSOSPage())),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterSOSPage())),
                     child: const Text(
                       'Cadastre agora',
                       style: TextStyle(

@@ -49,6 +49,12 @@ class _RegisterSOSPageState extends State<RegisterSOSPage> {
               const SizedBox(height: 10),
               TextFieldPhoneSOSWidget(
                 controller: phoneController,
+                hintText: 'CPF',
+                obscureText: false,
+              ),
+              const SizedBox(height: 10),
+              TextFieldPhoneSOSWidget(
+                controller: phoneController,
                 hintText: 'Telefone',
                 obscureText: false,
               ),
