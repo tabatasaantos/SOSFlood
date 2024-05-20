@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../controllers/location_sos_controller.dart';
+import '../../controllers/location_sos_controller.dart';
 
 class LocationSOSPage extends StatelessWidget {
   const LocationSOSPage({Key? key}) : super(key: key);
