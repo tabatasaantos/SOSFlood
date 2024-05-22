@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sos_flood/presentation/pages/form_sos_page.dart';
+import 'package:sos_flood/presentation/pages/login_sos_page.dart';
 
 import '../widgets/button_sos_widget.dart';
 import '../widgets/textfield_password_sos_widget.dart';
@@ -31,7 +32,6 @@ class _RegisterSOSPageState extends State<RegisterSOSPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
               const Text(
                 'Cadastre-se!',
                 style: TextStyle(
@@ -64,13 +64,14 @@ class _RegisterSOSPageState extends State<RegisterSOSPage> {
                 hintText: 'Senha',
                 obscureText: true,
               ),
-           
-              
               const SizedBox(height: 240),
               ButtonSOSWidget(
                 text: 'Cadastrar',
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const FormSOSPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  LoginSOSPage()));
                 },
               ),
             ],

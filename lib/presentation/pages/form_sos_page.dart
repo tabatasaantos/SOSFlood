@@ -30,35 +30,11 @@ class _FormSOSPageState extends State<FormSOSPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Pedir ajuda',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 137, 41, 34),
-                  fontSize: 27,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 100),
-              TextFieldPhoneSOSWidget(
-                controller: addressController,
-                hintText: 'Rua com número da casa/apto',
-                obscureText: false,
-              ),
-              const SizedBox(height: 10),
-              TextFieldPhoneSOSWidget(
-                controller: localizationController,
-                hintText: 'Bairro',
-                obscureText: false,
-              ),
-              const SizedBox(height: 10),
-              TextFieldPhoneSOSWidget(
-                controller: complementController,
-                hintText: 'Complemento',
-                obscureText: false,
-              ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 200),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                ),
                 child: Text(
                   'Ou compartilhe a sua localização',
                   style: TextStyle(color: Colors.grey[700]),
@@ -67,18 +43,16 @@ class _FormSOSPageState extends State<FormSOSPage> {
               const SizedBox(height: 20),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const LocationSOSPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LocationSOSPage()));
                 },
                 child: const Icon(
                   Icons.location_on,
-                  size: 100,
+                  size: 200,
                   color: Color.fromARGB(255, 137, 41, 34),
                 ),
-              ),
-              const SizedBox(height: 100),
-              ButtonSOSWidget(
-                text: 'Pedir ajuda',
-                onTap: () {},
               ),
             ],
           ),
