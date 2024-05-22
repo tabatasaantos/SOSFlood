@@ -30,14 +30,14 @@ class _FormSOSPageState extends State<FormSOSPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 200),
+              const SizedBox(height: 230),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10.0,
                 ),
                 child: Text(
                   'Ou compartilhe a sua localização',
-                  style: TextStyle(color: Colors.grey[700]),
+                  style: TextStyle(color: Colors.grey[700], fontSize: 18),
                 ),
               ),
               const SizedBox(height: 20),
