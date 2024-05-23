@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sos_flood/presentation/pages/forget_password_sos_page.dart';
 import 'package:sos_flood/presentation/pages/register_sos_page.dart';
 
 import '../widgets/button_sos_widget.dart';
@@ -54,9 +55,17 @@ class LoginSOSPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'Esqueceu sua senha?',
-                    style: TextStyle(color: Colors.grey[600]),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ForgetPasswordSosPage()));
+                    },
+                    child: Text(
+                      'Esqueceu sua senha?',
+                      style: TextStyle(color: Colors.grey[600]),
+                    ),
                   ),
                 ],
               ),
