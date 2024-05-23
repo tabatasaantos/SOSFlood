@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sos_flood/presentation/pages/location_sos_page.dart';
 
-import '../widgets/button_sos_widget.dart';
-import '../widgets/textfield_phone_sos_widget.dart';
 
 class FormSOSPage extends StatefulWidget {
   const FormSOSPage({super.key});
