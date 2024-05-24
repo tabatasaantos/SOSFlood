@@ -13,9 +13,6 @@ class ForgetPasswordSosPage extends StatefulWidget {
 }
 
 class _ForgetPasswordSosPageState extends State<ForgetPasswordSosPage> {
-  var localizationController = TextEditingController();
-  var addressController = TextEditingController();
-  var complementController = TextEditingController();
   final passwordController = TextEditingController();
 
   @override
