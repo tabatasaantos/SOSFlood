@@ -56,11 +56,12 @@ class LoginSOSPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ForgetPasswordSosPage()));
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ForgetPasswordSosPage()));
                     },
                     child: Text(
                       'Esqueceu sua senha?',
@@ -103,10 +104,10 @@ class LoginSOSPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                 TileSOSWidget(imagePath: 'lib/images/google.png'),
+                TileSOSWidget(imagePath: 'lib/images/google.png'),
               ],
             ),
             const SizedBox(height: 50),
@@ -117,7 +118,6 @@ class LoginSOSPage extends StatelessWidget {
                   'Não tem cadastro?',
                   style: TextStyle(color: Colors.grey[700]),
                 ),
-              
                 TextButton(
                   onPressed: () => Navigator.push(
                       context,

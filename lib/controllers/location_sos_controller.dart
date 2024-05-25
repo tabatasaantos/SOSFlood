@@ -32,9 +32,12 @@ class LocationSOSController extends GetxController {
 
   Future<Uint8List> getBytesFromAsset(String path, int width) async {
     ByteData data = await rootBundle.load(path);
-    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(), targetWidth: width);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
     ui.FrameInfo fi = await codec.getNextFrame();
-    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!.buffer.asUint8List();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!
+        .buffer
+        .asUint8List();
   }
 
   filtrarMap() {
@@ -50,8 +53,9 @@ class LocationSOSController extends GetxController {
 
     String field = 'position';
 
-    Stream<List<DocumentSnapshot>> stream =
-        geo.collection(collectionRef: ref).within(center: center, radius: raio.value, field: field);
+    Stream<List<DocumentSnapshot>> stream = geo
+        .collection(collectionRef: ref)
+        .within(center: center, radius: raio.value, field: field);
 
     stream.listen((List<DocumentSnapshot> locations) {
       markers.clear();
@@ -97,13 +101,11 @@ class LocationSOSController extends GetxController {
     update();
   }
 
-
-
   watchPosicao() async {
     positionStream = Geolocator.getPositionStream().listen((Position position) {
       latitude.value = position.latitude;
       longitude.value = position.longitude;
-        });
+    });
   }
 
   @override
@@ -141,7 +143,8 @@ class LocationSOSController extends GetxController {
       final posicao = await _posicaoAtual();
       latitude.value = posicao.latitude;
       longitude.value = posicao.longitude;
-      _mapsController.animateCamera(CameraUpdate.newLatLng(LatLng(latitude.value, longitude.value)));
+      _mapsController.animateCamera(
+          CameraUpdate.newLatLng(LatLng(latitude.value, longitude.value)));
     } catch (e) {
       Get.snackbar(
         'Erro',

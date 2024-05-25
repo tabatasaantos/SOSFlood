@@ -67,10 +67,8 @@ class _RegisterSOSPageState extends State<RegisterSOSPage> {
               ButtonSOSWidget(
                 text: 'Cadastrar',
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>  LoginSOSPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginSOSPage()));
                 },
               ),
             ],
