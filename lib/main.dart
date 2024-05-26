@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sos_flood/presentation/pages/login_sos_page.dart';
 
-
 void main() {
   runApp(const SOSFlood());
 }

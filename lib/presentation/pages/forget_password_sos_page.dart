@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sos_flood/presentation/pages/location_sos_page.dart';
 import 'package:sos_flood/presentation/pages/login_sos_page.dart';
 import 'package:sos_flood/presentation/widgets/button_sos_widget.dart';
 import 'package:sos_flood/presentation/widgets/textfield_password_sos_widget.dart';
-import 'package:sos_flood/presentation/widgets/textfield_phone_sos_widget.dart';
 
 class ForgetPasswordSosPage extends StatefulWidget {
   const ForgetPasswordSosPage({super.key});

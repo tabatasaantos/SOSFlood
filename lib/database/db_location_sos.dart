@@ -10,7 +10,7 @@ class DB {
     return DB._instance._firestore;
   }
 
-static setupDemoData() async {
+  static setupDemoData() async {
     //FirebaseFirestore firestore = DB.get();
     final geo = Geoflutterfire();
 
@@ -21,5 +21,5 @@ static setupDemoData() async {
       geo.point(latitude: -23.5584417, longitude: -46.6632462),
       geo.point(latitude: -23.5764314, longitude: -46.6892785),
     ];
-}
+  }
 }
