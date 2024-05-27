@@ -35,7 +35,7 @@ class _ForgetPasswordSosPageState extends State<ForgetPasswordSosPage> {
               ),
               const SizedBox(height: 300),
               ButtonSOSWidget(
-                text: 'Cadastrar nova senha',
+                text: 'Cadastrar',
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginSOSPage()));
