@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sos_flood/presentation/pages/login_sos_page.dart';
+import 'package:sos_flood/presentation/widgets/textfield_cpf_sos_widget.dart';
+import 'package:sos_flood/presentation/widgets/textfield_name_sos_widget.dart';
 
 import '../widgets/button_sos_widget.dart';
 import '../widgets/textfield_password_sos_widget.dart';
@@ -14,6 +16,7 @@ class RegisterSOSPage extends StatefulWidget {
 
 class _RegisterSOSPageState extends State<RegisterSOSPage> {
   var nameController = TextEditingController();
+  var cpfController = TextEditingController();
   var phoneController = TextEditingController();
   var passwordController = TextEditingController();
 
@@ -40,14 +43,14 @@ class _RegisterSOSPageState extends State<RegisterSOSPage> {
                 ),
               ),
               const SizedBox(height: 100),
-              TextFieldPhoneSOSWidget(
-                controller: phoneController,
+              TextFieldNameSOSWidget(
+                controller: nameController,
                 hintText: 'Nome completo',
                 obscureText: false,
               ),
               const SizedBox(height: 10),
-              TextFieldPhoneSOSWidget(
-                controller: phoneController,
+              TextFieldCPFSOSWidget(
+                controller: cpfController,
                 hintText: 'CPF',
                 obscureText: false,
               ),

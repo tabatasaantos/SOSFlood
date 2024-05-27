@@ -10,7 +10,7 @@ import '../widgets/tile_sos_widget.dart';
 class LoginSOSPage extends StatelessWidget {
   LoginSOSPage({super.key});
 
-  final phoneController = TextEditingController();
+  final cpfController = TextEditingController();
   final passwordController = TextEditingController();
 
   void signUserIn() {}
@@ -39,7 +39,7 @@ class LoginSOSPage extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             TextFieldPhoneSOSWidget(
-              controller: phoneController,
+              controller: cpfController,
               hintText: 'CPF',
               obscureText: false,
             ),
