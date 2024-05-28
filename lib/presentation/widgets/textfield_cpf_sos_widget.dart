@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class TextFieldPhoneSOSWidget extends StatelessWidget {
+class TextFieldCPFSOSWidget extends StatelessWidget {
   final dynamic controller;
   final String hintText;
   final bool obscureText;
+  static const cpfRegex = r'^\d{3}\.\d{3}\.\d{3}\-\d{2}$';
 
-  const TextFieldPhoneSOSWidget({
+  const TextFieldCPFSOSWidget({
     super.key,
     required this.controller,
     required this.hintText,
@@ -22,9 +23,9 @@ class TextFieldPhoneSOSWidget extends StatelessWidget {
         keyboardType: TextInputType.number,
         validator: (value) {
           if (value.toString().isEmpty) {
-            return 'Informe um telefone com DDD para continuar';
-          } else if (value.toString().length < 11) {
-            return 'Esse número não é válido';
+            return 'Informe um CPF para continuar';
+          } else if (!RegExp(cpfRegex).hasMatch(value.toString())) {
+            return 'Esse CPF não é válido';
           }
           return null;
         },
