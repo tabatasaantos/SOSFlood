@@ -11,15 +11,42 @@ class DB {
   }
 
   static setupDemoData() async {
-    //FirebaseFirestore firestore = DB.get();
+    FirebaseFirestore firestore = DB.get();
     final geo = Geoflutterfire();
 
-    List<GeoFirePoint> locations = [
+    List<GeoFirePoint> cafes = [
       geo.point(latitude: -23.5560767, longitude: -46.6608517),
       geo.point(latitude: -23.5585417, longitude: -46.6631051),
       geo.point(latitude: -23.5548119, longitude: -46.6571616),
       geo.point(latitude: -23.5584417, longitude: -46.6632462),
       geo.point(latitude: -23.5764314, longitude: -46.6892785),
     ];
+    final dados = [
+      {
+        'nome': 'House',
+        'imagem':
+            'https://thecoffee.s3-sa-east-1.amazonaws.com/images/the_coffee_berrini.jpeg',
+        'position': cafes[0].data,
+      },
+      {
+        'nome': 'House II',
+        'imagem':
+            'https://thecoffee.s3-sa-east-1.amazonaws.com/images/SP-Itaim-2.jpg',
+        'position': cafes[1].data,
+      },
+      {
+        'nome': 'House III',
+        'imagem':
+            'https://thecoffee.s3-sa-east-1.amazonaws.com/images/the_coffee_market_place.jpeg',
+        'position': cafes[2].data,
+      },
+      
+    ];
+
+    await firestore.collection('cafes').add(dados[0]);
+    await firestore.collection('cafes').add(dados[1]);
+    await firestore.collection('cafes').add(dados[2]);
+    await firestore.collection('cafes').add(dados[3]);
+    await firestore.collection('cafes').add(dados[4]);
   }
 }
