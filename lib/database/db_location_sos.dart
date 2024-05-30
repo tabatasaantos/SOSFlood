@@ -14,7 +14,7 @@ class DB {
     FirebaseFirestore firestore = DB.get();
     final geo = Geoflutterfire();
 
-    List<GeoFirePoint> cafes = [
+    List<GeoFirePoint> houses = [
       geo.point(latitude: -23.5560767, longitude: -46.6608517),
       geo.point(latitude: -23.5585417, longitude: -46.6631051),
       geo.point(latitude: -23.5548119, longitude: -46.6571616),
@@ -24,21 +24,18 @@ class DB {
     final dados = [
       {
         'nome': 'House',
-        'imagem':
-            'https://thecoffee.s3-sa-east-1.amazonaws.com/images/the_coffee_berrini.jpeg',
-        'position': cafes[0].data,
+        
+        'position': houses[0].data,
       },
       {
         'nome': 'House II',
-        'imagem':
-            'https://thecoffee.s3-sa-east-1.amazonaws.com/images/SP-Itaim-2.jpg',
-        'position': cafes[1].data,
+        
+        'position': houses[1].data,
       },
       {
         'nome': 'House III',
-        'imagem':
-            'https://thecoffee.s3-sa-east-1.amazonaws.com/images/the_coffee_market_place.jpeg',
-        'position': cafes[2].data,
+        
+        'position': houses[2].data,
       },
       
     ];
