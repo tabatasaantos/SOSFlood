@@ -42,7 +42,7 @@ class LocationSOSController extends GetxController {
 
   onMapCreated(GoogleMapController gmc) async {
     _mapsController = gmc;
-    getPosicao();
+    getPosition();
    
 
     var style = await rootBundle.loadString('assets/map/light.json');
@@ -66,7 +66,7 @@ class LocationSOSController extends GetxController {
     update();
   }
 
-  watchPosicao() async {
+  watchPosition() async {
     positionStream = Geolocator.getPositionStream().listen((Position position) {
       latitude.value = position.latitude;
       longitude.value = position.longitude;
@@ -79,7 +79,7 @@ class LocationSOSController extends GetxController {
     super.onClose();
   }
 
-  Future<Position> _posicaoAtual() async {
+  Future<Position> _positionCurrent() async {
     LocationPermission permissao;
     bool ativado = await Geolocator.isLocationServiceEnabled();
 
@@ -103,11 +103,11 @@ class LocationSOSController extends GetxController {
     return await Geolocator.getCurrentPosition();
   }
 
-  getPosicao() async {
-    try {
-      final posicao = await _posicaoAtual();
-      latitude.value = posicao.latitude;
-      longitude.value = posicao.longitude;
+  getPosition() async {
+    try {  
+      final position = await _positionCurrent();
+      latitude.value = position.latitude;
+      longitude.value = position.longitude;
       _mapsController.animateCamera(
           CameraUpdate.newLatLng(LatLng(latitude.value, longitude.value)));
     } catch (e) {

@@ -34,7 +34,7 @@ class _FormSOSPageState extends State<FormSOSPage> {
                   horizontal: 10.0,
                 ),
                 child: Text(
-                  'Ou compartilhe a sua localização',
+                  'Compartilhe a sua localização',
                   style: TextStyle(color: Colors.grey[700], fontSize: 18),
                 ),
               ),
