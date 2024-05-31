@@ -6,12 +6,10 @@ import 'dart:ui' as ui;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../database/db_location_sos.dart';
 
 class LocationSOSController extends GetxController {
   final latitude = 0.0.obs;
@@ -40,51 +38,18 @@ class LocationSOSController extends GetxController {
         .asUint8List();
   }
 
-  filtrarMap() {
-    final geo = Geoflutterfire();
-    final db = DB.get();
-
-    GeoFirePoint center = geo.point(
-      latitude: latitude.value,
-      longitude: longitude.value,
-    );
-
-    CollectionReference ref = db.collection('locations');
-
-    String field = 'position';
-
-    Stream<List<DocumentSnapshot>> stream = geo
-        .collection(collectionRef: ref)
-        .within(center: center, radius: raio.value, field: field);
-
-    stream.listen((List<DocumentSnapshot> locations) {
-      markers.clear();
-      for (var location in locations) {
-        addMarker(location);
-        update();
-      }
-      Get.back();
-    });
-  }
+ 
 
   onMapCreated(GoogleMapController gmc) async {
     _mapsController = gmc;
     getPosicao();
-    loadLocations();
+   
 
     var style = await rootBundle.loadString('assets/map/light.json');
     _mapsController.setMapStyle(style);
   }
 
-  loadLocations() async {
-    FirebaseFirestore db = DB.get();
-    final locations = await db.collection('locations').get();
-
-    for (var location in locations.docs) {
-      addMarker(location);
-    }
-  }
-
+  
   addMarker(location) async {
     GeoPoint point = location.get('position.geopoint');
     final Uint8List icon = await getBytesFromAsset('assets/light.png', 64);
