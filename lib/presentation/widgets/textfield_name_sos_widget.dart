@@ -22,7 +22,7 @@ class TextFieldNameSOSWidget extends StatelessWidget {
         validator: (value) {
         if (value.toString().isEmpty) {
           return 'Informe um nome de usuário para continuar';
-        } else if (value.toString().length < 5) {
+        } else if (value.toString().length < 3) {
           return 'Este nome não é válido';
         }
 
