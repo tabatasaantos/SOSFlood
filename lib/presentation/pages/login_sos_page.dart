@@ -14,8 +14,6 @@ class LoginSOSPage extends StatelessWidget {
   final cpfController = TextEditingController();
   final passwordController = TextEditingController();
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,11 +73,11 @@ class LoginSOSPage extends StatelessWidget {
             const SizedBox(height: 50),
             ButtonSOSWidget(
               text: 'Entrar',
-              onTap:(){
+              onTap: () {
                 Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FormSOSPage()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FormSOSPage()));
               },
             ),
             const SizedBox(height: 50),

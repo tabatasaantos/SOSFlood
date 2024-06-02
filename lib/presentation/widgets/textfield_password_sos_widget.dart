@@ -19,17 +19,15 @@ class TextFieldPasswordSOSWidget extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         obscureText: obscureText,
-       validator: (value) {
-        if (value.toString().isEmpty) {
-          return 'Informe uma senha de 4 dígitos para continuar';
-        } else if (value.toString().length < 4) {
-          return 'Senha não é válida';
-        }
+        validator: (value) {
+          if (value.toString().isEmpty) {
+            return 'Informe uma senha de 4 dígitos para continuar';
+          } else if (value.toString().length < 4) {
+            return 'Senha não é válida';
+          }
 
-        return null;
-      },
-
-       
+          return null;
+        },
         decoration: InputDecoration(
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
