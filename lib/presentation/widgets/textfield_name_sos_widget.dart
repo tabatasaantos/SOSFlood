@@ -20,14 +20,12 @@ class TextFieldNameSOSWidget extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         validator: (value) {
-        if (value.toString().isEmpty) {
-          return 'Informe um nome de usuário para continuar';
-        } else if (value.toString().length < 3) {
-          return 'Este nome não é válido';
-        }
+          if (value.toString().length < 3) {
+            return 'Este nome não é válido';
+          }
 
-        return null;
-      },
+          return null;
+        },
         decoration: InputDecoration(
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
