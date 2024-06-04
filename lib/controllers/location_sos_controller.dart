@@ -10,7 +10,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
 class LocationSOSController extends GetxController {
   final latitude = 0.0.obs;
   final longitude = 0.0.obs;
@@ -38,18 +37,14 @@ class LocationSOSController extends GetxController {
         .asUint8List();
   }
 
- 
-
   onMapCreated(GoogleMapController gmc) async {
     _mapsController = gmc;
     getPosition();
-   
 
     var style = await rootBundle.loadString('assets/map/light.json');
     _mapsController.setMapStyle(style);
   }
 
-  
   addMarker(location) async {
     GeoPoint point = location.get('position.geopoint');
     final Uint8List icon = await getBytesFromAsset('assets/light.png', 64);
@@ -104,7 +99,7 @@ class LocationSOSController extends GetxController {
   }
 
   getPosition() async {
-    try {  
+    try {
       final position = await _positionCurrent();
       latitude.value = position.latitude;
       longitude.value = position.longitude;
