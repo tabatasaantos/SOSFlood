@@ -9,6 +9,7 @@ class LocationSOSPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
     final controller = Get.put(LocationSOSController());
 
     return Scaffold(
@@ -17,7 +18,9 @@ class LocationSOSPage extends StatelessWidget {
         foregroundColor: Colors.black,
         backgroundColor: Colors.grey[300],
       ),
-      body: GetBuilder<LocationSOSController>(
+      body:
+  
+          GetBuilder<LocationSOSController>(
         init: controller,
         builder: (value) => GoogleMap(
           mapType: MapType.normal,
